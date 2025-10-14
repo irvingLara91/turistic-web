@@ -1,4 +1,4 @@
-import {FC, JSX, useState} from 'react';
+import React,{useState} from 'react';
 import {
     Box,
     Typography,
@@ -7,25 +7,20 @@ import {
     CardMedia,
     Grid,
     Container,
-    Chip,
     useTheme,
     useMediaQuery,
     Button,
     alpha,
-    Slide,
     Fade,
     Zoom,
-    Divider
 } from '@mui/material';
 import {
     DirectionsBoat,
     AccessTime,
     People,
-    MonetizationOn,
     Security,
     Landscape,
     Speed,
-    FamilyRestroom,
     Groups,
     Info
 } from '@mui/icons-material';
@@ -43,7 +38,7 @@ interface TourInfo {
     price: number;
     duration: string;
     capacity: string;
-    icon: JSX.Element;
+    icon: any;
     image: string;
     gallery: string[];
     features: string[];
@@ -180,7 +175,7 @@ const TOUR_TYPES: Record<TourType, TourInfo> = {
     }
 };
 
-const BoatTourReservation: FC<BoatTourShowcaseProps> = ({
+const BoatTourReservation: React.FC<BoatTourShowcaseProps> = ({
                                                                   title = "Experiencias Únicas en Lancha",
                                                                   subtitle = "Descubre aventuras memorables en el agua diseñadas para todos los gustos",
                                                                   featuredTours = ['scenic', 'adventure', 'romantic', 'luxury', 'group']

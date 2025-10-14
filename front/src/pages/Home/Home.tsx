@@ -1,8 +1,6 @@
 // pages/Home/Home.tsx
 import React from 'react';
 import { Box } from '@mui/material';
-import { DirectionsBoat, Security, BeachAccess, EmojiNature } from '@mui/icons-material';
-
 // Components
 import HeroSection from '@components/Home/HeroSection.tsx';
 import BoatTourReservation from "@components/Home/BoatTourReservation.tsx";

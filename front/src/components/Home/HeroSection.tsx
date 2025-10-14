@@ -8,7 +8,6 @@ import {
     Stack,
     useMediaQuery,
     useTheme,
-    Chip,
     alpha,
 } from '@mui/material';
 import {
@@ -16,8 +15,6 @@ import {
     PlayArrow,
     NavigateBefore,
     NavigateNext,
-    LocationOn,
-    Star
 } from '@mui/icons-material';
 import ContainerWrapper from '@components/Common/ContainerWrapper';
 import TypographyCustom from '@components/Common/TypographyCustom';
@@ -39,7 +36,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({images}) => {
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
     const isTablet = useMediaQuery(theme.breakpoints.down('lg'));
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const [isPlaying, setIsPlaying] = useState(true);
+    const [isPlaying] = useState(true);
     const [isHovered, setIsHovered] = useState(false);
 
     useEffect(() => {

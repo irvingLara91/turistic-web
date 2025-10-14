@@ -121,7 +121,13 @@ const Header: React.FC = () => {
                         minHeight: { xs: 70, md: 80 }
                     }}>
                         {/* Logo */}
-                        <Logo component="a" href="#inicio">
+                        <Box sx={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: 1,
+                            textDecoration: 'none',
+                            cursor: 'pointer'
+                        }}>
                             <Box
                                 sx={{
                                     width: { xs: 45, md: 55 },
@@ -169,7 +175,7 @@ const Header: React.FC = () => {
                                     DON PASITA
                                 </Box>
                             </Box>
-                        </Logo>
+                        </Box>
 
                         {/* Navegación desktop */}
                         {!isMobile && (
