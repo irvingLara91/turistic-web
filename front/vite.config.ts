@@ -23,9 +23,8 @@ export default defineConfig({
   },
   build: {
     sourcemap: false, // Desactiva los source maps en producción
-    outDir: 'build', // Configura el directorio de salida
+    outDir: 'dist', // Configura el directorio de salida
     rollupOptions: {
-
       output: {
         sourcemap: false, // También intenta desactivar aquí
       },
