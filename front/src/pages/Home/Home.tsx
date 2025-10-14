@@ -1,4 +1,3 @@
-import React from 'react';
 import {
     Box,
     Button,
@@ -75,7 +74,8 @@ const Home = () => {
             {/* Hero Section con fondo blanco */}
             <ContainerWrapper backgroundColor={"background.paper"} sxBox={{py: {xs: 8, md: 12}}}>
                 <Grid container spacing={4} alignItems="center">
-                    <Grid item xs={12} md={6}>
+                    <Grid
+                        size={{ xs: 12, md: 6 }}>
                         <TypographyCustom
                             variant={isMobile ? "h3" : "h2"}
                             font="montserrat"
@@ -129,7 +129,7 @@ const Home = () => {
                             </Button>
                         </Stack>
                     </Grid>
-                    <Grid item xs={12} md={6}>
+                    <Grid  size={{ xs: 12, md: 6 }}>
                         <Box
                             sx={{
                                 width: '100%',
@@ -180,7 +180,7 @@ const Home = () => {
 
                 <Grid container spacing={4}>
                     {features.map((feature, index) => (
-                        <Grid item xs={12} sm={6} md={3} key={index}>
+                        <Grid  size={{ xs: 12, sm:6, md: 3 }} key={index}>
                             <Card
                                 sx={{
                                     height: '100%',
@@ -224,7 +224,7 @@ const Home = () => {
             {/* Stats Section */}
             <ContainerWrapper backgroundColor="primary.main" sxBox={{py: 6, color: 'white'}}>
                 <Grid container spacing={4} textAlign="center">
-                    <Grid item xs={6} md={3}>
+                    <Grid  size={{ xs: 6, md: 3 }}>
                         <TypographyCustom
                             variant="h3"
                             font="montserrat"
@@ -242,7 +242,7 @@ const Home = () => {
                             Usuarios Activos
                         </TypographyCustom>
                     </Grid>
-                    <Grid item xs={6} md={3}>
+                    <Grid   size={{ xs: 6, md: 3 }}>
                         <TypographyCustom
                             variant="h3"
                             font="montserrat"
@@ -260,7 +260,7 @@ const Home = () => {
                             Uptime
                         </TypographyCustom>
                     </Grid>
-                    <Grid item xs={6} md={3}>
+                    <Grid   size={{ xs: 6, md: 3 }}>
                         <TypographyCustom
                             variant="h3"
                             font="montserrat"
@@ -278,7 +278,7 @@ const Home = () => {
                             Países
                         </TypographyCustom>
                     </Grid>
-                    <Grid item xs={6} md={3}>
+                    <Grid  size={{ xs: 6, md: 3 }} >
                         <TypographyCustom
                             variant="h3"
                             font="montserrat"
@@ -316,7 +316,7 @@ const Home = () => {
 
                 <Grid container spacing={4}>
                     {testimonials.map((testimonial, index) => (
-                        <Grid item xs={12} md={4} key={index}>
+                        <Grid  size={{ xs: 12, md: 4 }}  key={index}>
                             <Card sx={{height: '100%'}}>
                                 <CardContent sx={{p: 3}}>
                                     <Box sx={{display: 'flex', mb: 2}}>

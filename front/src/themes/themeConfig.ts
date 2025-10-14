@@ -169,72 +169,7 @@ const themeConfig = createTheme({
             lineHeight: 2.66,
             letterSpacing: '0.08333em',
             textTransform: 'uppercase',
-        },
-
-        // Variantes ITALIC personalizadas
-        h1Italic: {
-            fontFamily: '"Montserrat", sans-serif',
-            fontWeight: 700,
-            fontStyle: 'italic',
-            fontSize: '2.5rem',
-            lineHeight: 1.2,
-        },
-        h2Italic: {
-            fontFamily: '"Montserrat", sans-serif',
-            fontWeight: 600,
-            fontStyle: 'italic',
-            fontSize: '2rem',
-            lineHeight: 1.3,
-        },
-        h3Italic: {
-            fontFamily: '"Montserrat", sans-serif',
-            fontWeight: 600,
-            fontStyle: 'italic',
-            fontSize: '1.75rem',
-            lineHeight: 1.3,
-        },
-        h4Italic: {
-            fontFamily: '"Montserrat", sans-serif',
-            fontWeight: 500,
-            fontStyle: 'italic',
-            fontSize: '1.5rem',
-            lineHeight: 1.4,
-        },
-        h5Italic: {
-            fontFamily: '"Montserrat", sans-serif',
-            fontWeight: 500,
-            fontStyle: 'italic',
-            fontSize: '1.25rem',
-            lineHeight: 1.4,
-        },
-        h6Italic: {
-            fontFamily: '"Montserrat", sans-serif',
-            fontWeight: 500,
-            fontStyle: 'italic',
-            fontSize: '1.125rem',
-            lineHeight: 1.4,
-        },
-        body1Italic: {
-            fontFamily: '"Inter", sans-serif',
-            fontWeight: 400,
-            fontStyle: 'italic',
-            fontSize: '1rem',
-            lineHeight: 1.5,
-        },
-        body2Italic: {
-            fontFamily: '"Inter", sans-serif',
-            fontWeight: 400,
-            fontStyle: 'italic',
-            fontSize: '0.875rem',
-            lineHeight: 1.43,
-        },
-        buttonItalic: {
-            fontFamily: '"Roboto", sans-serif',
-            fontWeight: 500,
-            fontStyle: 'italic',
-            fontSize: '0.875rem',
-            textTransform: 'none',
-        },
+        }
     },
 
     // ===== ESPACIADO Y FORMAS =====
