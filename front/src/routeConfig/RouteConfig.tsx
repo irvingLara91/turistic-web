@@ -12,7 +12,7 @@ const RouteConfig: React.FC = () => {
             element: <MainLayout />,
             children: [
                 { path: '/', element: <Home /> },
-                { path: '/acerca-de', element: <AboutPage /> },
+                { path: '/acerca', element: <AboutPage /> },
 
             ],
         },
