@@ -121,7 +121,9 @@ const Header: React.FC = () => {
                         minHeight: { xs: 70, md: 80 }
                     }}>
                         {/* Logo */}
-                        <Box sx={{
+                        <Box component={"a"}
+                             href={"/"}
+                            sx={{
                             display: 'flex',
                             alignItems: 'center',
                             gap: 1,
