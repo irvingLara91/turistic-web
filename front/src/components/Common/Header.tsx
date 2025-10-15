@@ -50,8 +50,8 @@ const Header: React.FC = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     const navItems = [
-        { label: 'Inicio', href: '#inicio' },
-        { label: 'Tours', href: '#tours' },
+        { label: 'Inicio', href: '/' },
+        { label: 'Acerca de', href: '/acerca-de' },
         { label: 'Galería', href: '#galeria' },
         { label: 'Testimonios', href: '#testimonios' },
         { label: 'Contacto', href: '#contacto' }

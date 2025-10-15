@@ -320,13 +320,14 @@ const BoatTourReservation: React.FC<BoatTourShowcaseProps> = ({
                             sx={{
                                 py: 1,
                                 fontSize: {xs: '1rem', md: '1rem'},
-                                backgroundColor: theme.palette.secondary.main,
+                                backgroundColor: theme.palette.primary.main,
                                 color: 'white',
                                 fontWeight: 700,
                                 borderRadius: 2,
                                 boxShadow: '0 8px 32px rgba(0,0,0,0.3)',
                                 '&:hover': {
-                                    backgroundColor: theme.palette.secondary.dark,
+                                    borderColor: theme.palette.secondary.light,
+                                    backgroundColor: theme.palette.primary.dark,
                                     transform: 'translateY(-3px)',
                                     boxShadow: '0 12px 40px rgba(0,0,0,0.4)',
                                     '& .MuiSvgIcon-root': {

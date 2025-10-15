@@ -29,7 +29,7 @@ const FooterDerechos: React.FC = () => {
                     fontFamily: '"Hind", sans-serif',
                 }}
             >
-                © {new Date().getFullYear()} Copyright. Todos los derechos reservados Grupo Chedraui.
+                © {new Date().getFullYear()} Copyright. Todos los derechos reservados.
             </TypographyCustom>
         </ContainerWrapper>
     );
