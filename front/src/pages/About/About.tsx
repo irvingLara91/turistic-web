@@ -8,179 +8,24 @@ import {
     CardContent,
     useTheme,
     alpha,
+    Avatar,
+    Chip,
 } from '@mui/material';
 import {
-    DirectionsBoat,
     Groups,
-    EmojiEvents,
     LocationOn,
-    Public,
-    Nature,
-    Navigation,
-    BeachAccess,
+    Person,
+    Sailing,
 } from '@mui/icons-material';
 import ContainerWrapper from '@components/Common/ContainerWrapper';
 import ImageGallery from '@components/About/ImageGallery';
 import HistoryTimeline from '@components/About/HistoryTimeline';
+import {donPasitaInfo, features, galleryImages, historyEvents, stats} from "@utils/constants.tsx";
 
 const AboutPage: React.FC = () => {
     const theme = useTheme();
 
-    // Datos de la historia actualizada para Isla Aguada
-    const historyEvents = [
-        {
-            year: "1999",
-            title: "Nacimiento del Turismo en Isla Aguada",
-            description: "Fui el pionero del turismo en esta joya de Campeche, transformando la pesca tradicional en experiencias turísticas únicas. Comenzamos con una sola lancha, mostrando los manglares y la barrera de coral más importante del Golfo de México.",
-            location: "Isla Aguada, Campeche",
-            image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&auto=format&fit=crop&q=60",
-            highlights: [
-                "Primer servicio turístico organizado en la isla",
-                "Integración de pescadores locales como guías",
-                "Rutas por la Laguna de Términos"
-            ]
-        },
-        {
-            year: "2005",
-            title: "Expansión y Reconocimiento Regional",
-            description: "Nuestra flota creció a 5 lanchas especializadas, incorporando tecnología de navegación y seguridad. Fuimos reconocidos por el Gobierno de Campeche como 'Empresa Turística Sostenible' por nuestro modelo de turismo comunitario.",
-            location: "Laguna de Términos, Campeche",
-            image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&auto=format&fit=crop&q=60",
-            highlights: [
-                "Certificación en turismo sostenible",
-                "Alianzas con cooperativas pesqueras",
-                "Rutas ecoturísticas establecidas"
-            ]
-        },
-        {
-            year: "2012",
-            title: "Liderazgo en Ecoturismo",
-            description: "Implementamos el primer programa de avistamiento responsable de delfines en la región. Nuestras rutas fueron incluidas en la Guía Oficial de Turismo de Campeche y recibimos el premio 'Turismo Verde' por nuestra conservación de manglares.",
-            location: "Santuario del Manatí, Campeche",
-            image: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=500&auto=format&fit=crop&q=60",
-            highlights: [
-                "Programa de conservación de delfines",
-                "Guías certificados en ecoturismo",
-                "Premio Nacional de Turismo Sostenible"
-            ]
-        },
-        {
-            year: "2020",
-            title: "Modernización y Sustentabilidad",
-            description: "Incorporamos lanchas eléctricas silenciosas para minimizar el impacto ambiental. Desarrollamos la app 'Isla Aguada Tours' con realidad aumentada para mostrar la biodiversidad. Certificación EarthCheck por nuestras prácticas sostenibles.",
-            location: "Reserva de la Biosfera, Campeche",
-            image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=500&auto=format&fit=crop&q=60",
-            highlights: [
-                "Primera flota eléctrica en el Golfo de México",
-                "Tecnología AR en experiencias turísticas",
-                "Certificación internacional EarthCheck"
-            ]
-        },
-        {
-            year: "2024",
-            title: "25 Años de Legado y Futuro",
-            description: "Celebramos un cuarto de siglo innovando en turismo responsable. Hemos transportado más de 75,000 visitantes, generado empleo para 50 familias y protegido 200 hectáreas de manglar. Lanzamos el programa 'Guardianes del Caribe Mexicano'.",
-            location: "Isla Aguada & Caribe Mexicano",
-            image: "https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=500&auto=format&fit=crop&q=60",
-            highlights: [
-                "75,000+ experiencias creadas",
-                "50 familias beneficiadas directamente",
-                "200 hectáreas de manglar protegidas"
-            ]
-        }
-    ];
 
-    // Galería de imágenes actualizada con fotos reales de Isla Aguada
-    const galleryImages = [
-        {
-            src: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&auto=format&fit=crop&q=60",
-            alt: "Atardecer en Isla Aguada",
-            caption: "Atardeceres únicos en el Golfo de México",
-            year: "2024"
-        },
-        {
-            src: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&auto=format&fit=crop&q=60",
-            alt: "Lancha turística en manglares",
-            caption: "Navegación por los manglares de Campeche",
-            year: "2024"
-        },
-        {
-            src: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&auto=format&fit=crop&q=60",
-            alt: "Delfines en Isla Aguada",
-            caption: "Avistamiento responsable de delfines",
-            year: "2023"
-        },
-        {
-            src: "https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=600&auto=format&fit=crop&q=60",
-            alt: "Manglares de Campeche",
-            caption: "Ecosistema de manglar protegido",
-            year: "2023"
-        },
-        {
-            src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&auto=format&fit=crop&q=60",
-            alt: "Aguas cristalinas Isla Aguada",
-            caption: "Aguas cristalinas del Caribe Mexicano",
-            year: "2024"
-        },
-        {
-            src: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&auto=format&fit=crop&q=60",
-            alt: "Naturaleza Isla Aguada",
-            caption: "Biodiversidad única de la región",
-            year: "2024"
-        }
-    ];
-
-    // Estadísticas actualizadas
-    const stats = [
-        {
-            icon: <DirectionsBoat sx={{ fontSize: '3rem' }} />,
-            number: "25+",
-            label: "Años de Innovación",
-            description: "Pioneros en turismo sostenible desde 1999"
-        },
-        {
-            icon: <Groups sx={{ fontSize: '3rem' }} />,
-            number: "75K+",
-            label: "Experiencias Únicas",
-            description: "Visitantes que descubrieron Isla Aguada"
-        },
-        {
-            icon: <Nature sx={{ fontSize: '3rem' }} />,
-            number: "200+",
-            label: "Hectáreas Protegidas",
-            description: "Manglares conservados activamente"
-        },
-        {
-            icon: <Navigation sx={{ fontSize: '3rem' }} />,
-            number: "15",
-            label: "Rutas Futuristas",
-            description: "Experiencias con tecnología AR"
-        }
-    ];
-
-    // Características únicas de Isla Aguada
-    const features = [
-        {
-            icon: <Public sx={{ fontSize: '2.5rem' }} />,
-            title: "Biodiversidad Única",
-            description: "Hogar del delfín nariz de botella, manatíes y más de 200 especies de aves migratorias en la Reserva de la Biosfera."
-        },
-        {
-            icon: <Nature sx={{ fontSize: '2.5rem' }} />,
-            title: "Turismo Sostenible",
-            description: "Primera empresa en Campeche con certificación EarthCheck y lanchas eléctricas de cero emisiones."
-        },
-        {
-            icon: <BeachAccess sx={{ fontSize: '2.5rem' }} />,
-            title: "Playas Vírgines",
-            description: "Acceso exclusivo a playas prístinas y sistemas de manglar entre los mejor conservados de México."
-        },
-        {
-            icon: <EmojiEvents sx={{ fontSize: '2.5rem' }} />,
-            title: "Premios Nacionales",
-            description: "Reconocidos por SEMARNAT y SECTUR por nuestro modelo de turismo comunitario y conservación."
-        }
-    ];
 
     return (
         <Box
@@ -263,10 +108,184 @@ const AboutPage: React.FC = () => {
                     </Typography>
                 </Box>
 
+                {/* Sección Don Pasita */}
+                <Box sx={{ mb: 10 }}>
+                    <Card
+                        sx={{
+                            borderRadius: 4,
+                            background: `linear-gradient(135deg, 
+                                ${alpha(theme.palette.primary.main, 0.05)} 0%, 
+                                ${alpha(theme.palette.secondary.main, 0.05)} 100%)`,
+                            border: `1px solid ${alpha(theme.palette.primary.main, 0.2)}`,
+                            overflow: 'hidden',
+                            boxShadow: `0 20px 60px ${alpha(theme.palette.primary.main, 0.1)}`,
+                        }}
+                    >
+                        <Grid container>
+                            <Grid size={{xs:12,md:4}}>
+                                <Box
+                                    sx={{
+                                        height: '100%',
+                                        minHeight: 400,
+                                        background: `linear-gradient(135deg, 
+                                            ${theme.palette.primary.main} 0%, 
+                                            ${theme.palette.secondary.main} 100%)`,
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        padding: 4,
+                                        textAlign: 'center',
+                                        color: 'white',
+                                        position: 'relative',
+                                        '&::before': {
+                                            content: '""',
+                                            position: 'absolute',
+                                            top: 0,
+                                            left: 0,
+                                            right: 0,
+                                            bottom: 0,
+                                            background: 'url(https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&auto=format&fit=crop&q=60) center/cover',
+                                            opacity: 0.1,
+                                        }
+                                    }}
+                                >
+                                    <Avatar
+                                        src={donPasitaInfo?.image as string}
+                                        sx={{
+                                            width: 200,
+                                            height: 200,
+                                            border: '4px solid white',
+                                            mb: 3,
+                                            boxShadow: '0 8px 32px rgba(0,0,0,0.3)',
+                                        }}
+                                    />
+                                    <Typography
+                                        variant="h3"
+                                        fontFamily="Montserrat"
+                                        fontWeight={800}
+                                        gutterBottom
+                                        sx={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}
+                                    >
+                                        {donPasitaInfo.name}
+                                    </Typography>
+                                    <Typography
+                                        variant="h6"
+                                        fontFamily="Inter"
+                                        sx={{ opacity: 0.9, mb: 2 }}
+                                    >
+                                        {donPasitaInfo.title}
+                                    </Typography>
+                                    <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', justifyContent: 'center' }}>
+                                        <Chip
+                                            icon={<Sailing />}
+                                            label={`${donPasitaInfo.yearsExperience} años`}
+                                            sx={{ background: 'rgba(255,255,255,0.2)', color: 'white' }}
+                                        />
+                                        <Chip
+                                            icon={<Groups />}
+                                            label={`${donPasitaInfo.toursGuided}+ tours`}
+                                            sx={{ background: 'rgba(255,255,255,0.2)', color: 'white' }}
+                                        />
+                                    </Box>
+                                </Box>
+                            </Grid>
+                            <Grid size={{xs:12,md:8}}>
+                                <Box sx={{ padding: 4 }}>
+                                    <Typography
+                                        variant="h4"
+                                        fontFamily="Montserrat"
+                                        fontWeight={700}
+                                        gutterBottom
+                                        sx={{
+                                            background: `linear-gradient(135deg, 
+                                                ${theme.palette.primary.main} 0%, 
+                                                ${theme.palette.secondary.main} 100%)`,
+                                            backgroundClip: 'text',
+                                            WebkitBackgroundClip: 'text',
+                                            WebkitTextFillColor: 'transparent',
+                                            mb: 3,
+                                        }}
+                                    >
+                                        El Alma de Isla Aguada
+                                    </Typography>
+
+                                    <Typography
+                                        variant="body1"
+                                        fontFamily="Inter"
+                                        sx={{
+                                            color: theme.palette.text.secondary,
+                                            lineHeight: 1.8,
+                                            mb: 4,
+                                            fontSize: '1.1rem',
+                                            whiteSpace: 'pre-line',
+                                        }}
+                                    >
+                                        {donPasitaInfo.story}
+                                    </Typography>
+
+                                    <Box sx={{ mb: 4 }}>
+                                        <Typography
+                                            variant="h6"
+                                            fontFamily="Montserrat"
+                                            fontWeight={600}
+                                            gutterBottom
+                                            sx={{ color: theme.palette.text.primary }}
+                                        >
+                                            Lo que me define:
+                                        </Typography>
+                                        <Grid container spacing={1}>
+                                            {donPasitaInfo.characteristics.map((char, index) => (
+                                                <Grid size={{xs:12,sm:6}} key={index}>
+                                                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>
+                                                        <Person sx={{ color: theme.palette.primary.main, fontSize: '1rem' }} />
+                                                        <Typography variant="body2" fontFamily="Inter">
+                                                            {char}
+                                                        </Typography>
+                                                    </Box>
+                                                </Grid>
+                                            ))}
+                                        </Grid>
+                                    </Box>
+
+                                    <Card
+                                        sx={{
+                                            background: `linear-gradient(135deg, 
+                                                ${alpha(theme.palette.primary.main, 0.1)} 0%, 
+                                                ${alpha(theme.palette.secondary.main, 0.1)} 100%)`,
+                                            border: `1px solid ${alpha(theme.palette.primary.main, 0.2)}`,
+                                            padding: 3,
+                                            borderRadius: 3,
+                                        }}
+                                    >
+                                        <Typography
+                                            variant="body1"
+                                            fontFamily="Inter"
+                                            fontStyle="italic"
+                                            sx={{
+                                                color: theme.palette.text.primary,
+                                                textAlign: 'center',
+                                                lineHeight: 1.6,
+                                                '&::before, &::after': {
+                                                    content: '"\\""',
+                                                    fontSize: '1.5rem',
+                                                    color: theme.palette.primary.main,
+                                                }
+                                            }}
+                                        >
+                                            {donPasitaInfo.favoriteQuote}
+                                        </Typography>
+                                    </Card>
+                                </Box>
+                            </Grid>
+                        </Grid>
+                    </Card>
+                </Box>
+
                 {/* Estadísticas Futuristas */}
                 <Grid container spacing={4} sx={{ mb: 10 }}>
                     {stats.map((stat, index) => (
-                        <Grid  size={{xs:12,sm:6,md:3}}key={index}>
+                        <Grid size={{xs:12,sm:6,md:3}} key={index}>
                             <Card
                                 sx={{
                                     textAlign: 'center',
@@ -355,6 +374,7 @@ const AboutPage: React.FC = () => {
                     ))}
                 </Grid>
 
+                {/* Resto del código permanece igual... */}
                 {/* Características Únicas */}
                 <Box sx={{ mb: 10 }}>
                     <Typography

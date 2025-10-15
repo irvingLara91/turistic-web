@@ -23,6 +23,7 @@ import {
     LocationOn,
     WhatsApp
 } from '@mui/icons-material';
+import {contactInfo, navItems} from "@utils/constants.tsx";
 
 const Logo = styled('div')(({ theme }) => ({
     display: 'flex',
@@ -48,19 +49,6 @@ const Header: React.FC = () => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-    const navItems = [
-        { label: 'Inicio', href: '/' },
-        { label: 'Acerca de', href: '/acerca' },
-        { label: 'Galería', href: '#galeria' },
-        { label: 'Testimonios', href: '#testimonios' },
-        { label: 'Contacto', href: '#contacto' }
-    ];
-
-    const contactInfo = {
-        phone: '+1 234 567 8900',
-        email: 'info@aventuramarina.com'
-    };
 
     return (
         <>
