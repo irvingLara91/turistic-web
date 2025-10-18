@@ -333,7 +333,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({images}) => {
                         {/* Información de Estadísticas */}
                         <Box
                             sx={{
-                                mt: 6,
+                                mt: {xs:0,sm:6},
                                 display: 'flex',
                                 gap: 5,
                                 animation: 'fadeInUp 1.4s ease-out',
